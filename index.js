@@ -6,10 +6,11 @@ if (!process.env.TWITTER_API_SECRET) throw new Error('Falta TWITTER_API_SECRET')
 if (!process.env.TWITTER_ACCESS_TOKEN) throw new Error('Falta TWITTER_ACCESS_TOKEN');
 if (!process.env.TWITTER_ACCESS_TOKEN_SECRET) throw new Error('Falta TWITTER_ACCESS_TOKEN_SECRET');
 
-// Inicializar cliente de Twitter
 const twitterClient = new TwitterApi({
   appKey: process.env.TWITTER_API_KEY,
   appSecret: process.env.TWITTER_API_SECRET,
+  accessToken: process.env.TWITTER_ACCESS_TOKEN,
+  accessSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 });
 
 // Autenticación Application-Only
